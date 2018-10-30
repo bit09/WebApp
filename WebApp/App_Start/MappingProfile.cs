@@ -12,8 +12,13 @@ namespace WebApp.App_Start
     {
         public MappingProfile()
         {
-            CreateMap<Customer, CustomerDto>();
+            CreateMap<Customer, CustomerDto>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
             CreateMap<CustomerDto, Customer>();
+
+            CreateMap<Movie, MovieDto>()
+                .ForMember(m => m.Id, opt => opt.Ignore());
+            CreateMap<MovieDto, Movie>();
         }
     }
 }
