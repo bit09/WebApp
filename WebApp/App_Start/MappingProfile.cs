@@ -19,6 +19,10 @@ namespace WebApp.App_Start
             CreateMap<Movie, MovieDto>()
                 .ForMember(m => m.Id, opt => opt.Ignore());
             CreateMap<MovieDto, Movie>();
+
+            CreateMap<MembershipType,   MembershipTypeDto>()
+                .ForMember(t => t.Id, opt => opt.Ignore());
+            CreateMap<MembershipTypeDto, MembershipType>();
         }
     }
 }
