@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AutoMapper;
+using Vidly.Dtos;
 using WebApp.Dtos;
 using WebApp.Models;
 
@@ -23,6 +24,10 @@ namespace WebApp.App_Start
             CreateMap<MembershipType,   MembershipTypeDto>()
                 .ForMember(t => t.Id, opt => opt.Ignore());
             CreateMap<MembershipTypeDto, MembershipType>();
+
+            CreateMap<Genre, GenreDto>()
+                .ForMember(g => g.Id, opt => opt.Ignore());
+            CreateMap<GenreDto, Genre>();
         }
     }
 }
